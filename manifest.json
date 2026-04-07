@@ -1,0 +1,21 @@
+{
+  "name": "Marché Entre Nous Abidjan",
+  "short_name": "Marché Nous",
+  "description": "Plateforme d'échange direct entre particuliers à Abidjan",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#25D366",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/Z0zj5WYL/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.postimg.cc/Z0zj5WYL/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

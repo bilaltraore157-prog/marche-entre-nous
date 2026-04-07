@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marché entre nous abidjant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <h1 class="logo" onclick="location.reload()">MARCHÉ<span> ENTRE NOUS</span></h1>
+            <button id="btnOpenForm" class="btn-primary">Vendre un article</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="Rechercher un produit...">
+            <select id="filterQuartier">
+                <option value="">Tous les quartiers</option>
+                <option value="Angré">Angré</option>
+                <option value="Yopougon">Yopougon</option>
+                <option value="Cocody">Cocody</option>
+                <option value="Abobo">Abobo</option>
+            </select>
+        </section>
+
+        <section id="welcomeAlert" class="alert-banner">
+            <strong>📢 RAPPEL DE SÉCURITÉ :</strong> 
+            Pour éviter les arnaques, ne payez jamais d'avance (frais de livraison ou réservation). Rencontrez le vendeur dans un lieu public et vérifiez l'article avant de donner l'argent.
+        </section>
+
+        <div id="productList" class="product-grid"></div>
+    </main>
+
+    <div id="infoModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="infoTitle">Informations</h2>
+                <span class="close-modal" onclick="closeAll()">&times;</span>
+            </div>
+            <div id="infoBody" style="margin: 20px 0; line-height: 1.6;"></div>
+            <button class="btn-full" onclick="closeAll()">D'accord</button>
+        </div>
+    </div>
+
+    <div id="productModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nouvelle annonce</h2>
+                <span class="close-modal" onclick="closeAll()">&times;</span>
+            </div>
+            <form id="productForm">
+                <input type="text" id="pName" placeholder="Nom du produit" required>
+                <textarea id="pDesc" placeholder="Détails, état..." rows="3" required></textarea>
+                
+                <div class="form-row">
+                    <input type="number" id="pPrice" placeholder="Prix (FCFA)" required>
+                    <input type="text" id="pQuartier" placeholder="Quartier (ex: Angré)" required>
+                </div>
+                
+                <div class="form-row">
+                    <input type="tel" id="pWhatsapp" placeholder="WhatsApp (ex: 07...)" required>
+                    <input type="password" id="pPin" placeholder="Code secret (4 chiffres)" maxlength="4" required>
+                </div>
+
+                <div class="file-area">
+                    <label for="pImgInput" class="custom-file-upload">
+                        📷 <span>Ajouter des Photos</span>
+                    </label>
+                    <input type="file" id="pImgInput" accept="image/*" multiple hidden>
+                    <div id="imgPreviewContainer" class="preview-grid"></div>
+
+                    <label for="pVidInput" class="custom-file-upload vid-btn">
+                        🎥 <span>Vidéo (Optionnel)</span>
+                    </label>
+                    <input type="file" id="pVidInput" accept="video/*" hidden>
+                    <div id="vidPreview"></div>
+                </div>
+
+                <button type="submit" class="btn-full">Mettre en ligne</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="detailModal" class="modal hidden">
+        <div class="modal-content detail-content">
+            <span class="close-detail" onclick="closeAll()">&times; Retour</span>
+            <div id="detailData"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <span onclick="showInfo('about')">À propos</span> | 
+                <span onclick="showInfo('security')">Sécurité</span> | 
+                <span onclick="showInfo('contact')">Contact</span>
+            </div>
+            <p>&copy; 2026 Marché entre nous abidjant</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
