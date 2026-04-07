@@ -6,6 +6,20 @@
     <title>Marché entre nous abidjant</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#25D366">
+<link rel="icon" type="image/png" href="https://i.postimg.cc/Z0zj5WYL/logo.png">
+<link rel="apple-touch-icon" href="https://i.postimg.cc/Z0zj5WYL/logo.png">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('PWA: Service Worker enregistré !'))
+        .catch(err => console.log('PWA: Erreur', err));
+    });
+  }
+</script>
 </head>
 <body>
 
